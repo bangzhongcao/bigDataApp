@@ -1,0 +1,27 @@
+<div class="login p-f">
+	<form name='form'>
+		<div class="logo ta-c">
+			<div class="logo_wrap">
+				<img src="image/logo.png" alt="">
+				<p>大数据资源网</p>
+			</div>
+		</div>
+		<div class="input_wrap">
+			<div class="account p-r b-box">
+				<span class='icon_account p-a'></span>
+				<input name="phone" ng-model='user.phone'validator="required,phone" type="text" class='b-box out-l-n' placeholder='请输入手机号'>
+			</div>
+			<div class="pass p-r b-box">
+				<span class='icon_pass p-a'></span>
+				<input name="password" ng-model='user.pass' validator="required,password"type="password" class='b-box out-l-n' placeholder='请输入密码'>
+			</div>
+			<div class='visitor ta-r' ui-sref='main'>
+				<div class='symbol ta-c va-m'>!</div>
+				随便看看</div>
+		</div>
+		<div class="btn_group">
+			<button class='loginbtn out-l-n' validation-submit="form" ng-click="submit()">登录</button>
+			<button class='registerbtn out-l-n' ui-sref='register'>注册</button>
+		</div>
+	</form>
+</div>

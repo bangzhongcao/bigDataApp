@@ -1,0 +1,25 @@
+<div class="courseInfo">
+	<div class="coursehead p-r">
+		<div class="p-a back_img ta-c">
+			<img src="image/back.png" alt="" ng-click='back()'>
+		</div>
+		<p class='courseName p-a'>spark从零开始</p>
+		<p class="collect_icon p-a ta-c">
+			<img src="image/unlike.png" alt="">
+		</p>
+	</div>
+	<div class="course_intro">
+		简介：Spark作为新一代大数据计算引擎，因为内存计算的特性，具有比hadoop更快的计算速度。本教程涉及Spark基础概念RDD，KeyValueRDD，RDD的常用Transformation和Action操作等
+	</div>
+	<div class="outline">
+		<p class='outline_title'>课程提纲</p>
+		<div class='outline_content' ng-repeat='item in outlinelist'>
+			<p class='chapter' ng-bind='item.title'></p>
+			<div class="content_video" ng-repeat='obj in item.content'>
+				<p class="video_title" ng-bind='obj.name' ng-click='selfName?learn():login()'></p>
+			</div>
+		</div>
+	</div>
+	<div class="start p-f ta-c" ng-bind="selfName?'开始学习':'去登录'" 
+	ng-click='selfName?learn():login()'></div>
+</div>

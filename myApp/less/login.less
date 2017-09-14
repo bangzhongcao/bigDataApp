@@ -1,0 +1,120 @@
+.login{
+	background-color: rgba(0,0,0,0.6);
+	width: 100%;
+	height: 100%;
+	form{
+		height: 100%;
+		.logo{
+			box-sizing: border-box;
+			width: 100%;
+			height: 40%;
+			padding-top: 12%;
+			.logo_wrap{
+				p{
+					.lh(40);
+					.fs(25);
+					font-weight: 600;
+					color: @defaultColor;
+				}
+			}
+		}
+		.input_wrap{
+			width: 75%;
+			height: 20%;
+			margin: 10px auto;
+			span{
+				.t(0);
+				.l(0);
+			}
+			input{
+				.h(35);
+				width: 100%;
+				border:0;
+				background-color: rgba(0,0,0,.4);
+				.pl(10);
+				color:@defaultColor;
+				.fs(14);
+				&::-webkit-input-placeholder{
+					color:@defaultColor;
+				}
+			}
+			span{
+				p{
+					color:@logOffColor;
+					.fs(12);
+				}
+			}
+			.account{
+				.pl(35);
+				.mt(15);
+				.mb(5);
+				.icon_account{
+					.w(35);
+					.h(35);
+					background:rgba(0,0,0,.6) url('../image/account.png') no-repeat center;
+				}
+			}
+			.pass{
+				.pl(35);
+				.icon_pass{
+					.w(35);
+					.h(35);
+					background:rgba(0,0,0,.6) url('../image/lock.png') no-repeat center;
+				}
+			}
+			.message{
+				margin: 8px 0;
+				input{
+					width: 40%;
+					.h(30);
+				}
+				.get_code{
+					.t(3);
+					.r(4);
+					width: 40%;
+					border: 1px solid @headBgColor;
+					border-radius: 3px;
+					background-color: rgba(0,0,0,.3);
+					.lh(24);
+					color:@headBgColor;
+				}
+			}
+			.visitor{
+				.symbol{
+					display: inline-block;
+					.w(20);
+					.h(20);
+					.lh(20);
+					background-color: rgba(0,0,0, 0.7);
+					border-radius: 15px;
+					font-weight: 700;
+				}
+				.h(30);
+				.pr(10);
+				.fs(12);
+				.lh(30);
+				color: @headBgColor;
+			}
+		}
+		.btn_group{
+			width: 75%;
+			margin: 40px auto;
+			button{
+				width: 100%;
+				height: 30px;
+				border-radius: 4px;
+				&:first-child{
+					.mb(5);
+					border:0;
+					background-color: @headBgColor;
+					color:@defaultColor;
+				}
+				&:last-child{
+					border:1px solid @headBgColor;
+					background-color: rgba(135,206,235, 0.4);
+					color:@headBgColor;
+				}
+			}
+		}
+	}
+}
