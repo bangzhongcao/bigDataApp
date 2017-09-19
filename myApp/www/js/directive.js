@@ -10,19 +10,6 @@ angular.module('starter.directive', [])
 		// },
 		link:function($scope){
 			// 搜索框颜色渐变
-			var banner = document.getElementsByClassName('head_search')[0];
-		    var height = 130;
-		    var scrollPane = document.getElementsByClassName('scroll');
-		    // scrollPane.onscroll = function(){
-		    //     var top = document.body.scrollTop;
-		    //     console.log(height);
-		    //     if(top > height){
-		    //     	banner.style.backgroundColor = 'rgba(135,206,235, 1)';
-		    //     }else{
-		    //         var op = top/height* 1;
-		    //         banner.style.backgroundColor = 'rgba(135,206,235, '+op+')';
-		    //     }
-		    // }
 		}
 	}
 }])
@@ -41,22 +28,22 @@ angular.module('starter.directive', [])
 }])
 
 
-// .directive('appListHead',[function(){
-// 	return {
-// 		restrict:'A',
-// 		replace:true,
-// 		templateUrl:'template/view/listHead.html',
-// 		scope:{
-// 			backstyle:'=',
-// 			stitle:'='
-// 		},
-// 		link:function($scope){
-// 			$scope.back = function(){
-// 				window.history.back();
-// 			}
-// 		}
-// 	}
-// }])
+.directive('appListHead',[function(){
+	return {
+		restrict:'A',
+		replace:true,
+		templateUrl:'templates/view/listHead.html',
+		scope:{
+			backstyle:'=',
+			stitle:'='
+		},
+		link:function($scope){
+			$scope.back = function(){
+				window.history.back();
+			}
+		}
+	}
+}])
 
 .directive('appModuleList',[function(){
 	return {

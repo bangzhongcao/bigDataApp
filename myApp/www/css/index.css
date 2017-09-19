@@ -67,6 +67,9 @@
   font-size: 0.32rem;
   color: #808080;
 }
+.module ul li img {
+  margin-bottom: 0.18666667rem;
+}
 .courseList {
   margin-top: 5px;
   background-color: #fff;
@@ -141,7 +144,7 @@
 .newsList .news_ul li img {
   margin-right: 0.4rem;
   width: 3.2rem;
-  height: 2.13333333rem;
+  height: 1.92rem;
 }
 .newsList .news_ul li .news_name {
   font-size: 0.4rem;
@@ -279,6 +282,7 @@
 .listhead {
   top: 0rem;
   width: 100%;
+  z-index: 100;
   height: 4.26666667rem;
 }
 .listhead .back_img {
@@ -287,6 +291,8 @@
   line-height: 0.8rem;
   top: 0.26666667rem;
   left: 0.26666667rem;
+  font-size: 0.64rem;
+  color: #fff;
 }
 .listhead .course_title {
   color: #fff;
@@ -302,8 +308,8 @@
   font-family: 'Microsoft Yahei';
 }
 .self .head_pic {
-  background-color: #87CEEB;
-  border: 1px solid #87CEEB;
+  background-color: #d43f3a;
+  border: 1px solid #d43f3a;
   height: 4.8rem;
 }
 .self .head_pic .self_pic {
@@ -425,18 +431,18 @@
   top: 0.08rem;
   right: 0.10666667rem;
   width: 40%;
-  border: 1px solid #87CEEB;
+  border: 1px solid #d43f3a;
   border-radius: 3px;
   background-color: rgba(0, 0, 0, 0.3);
   line-height: 0.64rem;
-  color: #87CEEB;
+  color: #d43f3a;
 }
 .login form .input_wrap .visitor {
   height: 0.8rem;
   padding-right: 0.26666667rem;
   font-size: 0.32rem;
   line-height: 0.8rem;
-  color: #87CEEB;
+  color: #d43f3a;
 }
 .login form .input_wrap .visitor .symbol {
   display: inline-block;
@@ -459,23 +465,28 @@
 .login form .btn_group button:first-child {
   margin-bottom: 0.13333333rem;
   border: 0;
-  background-color: #87CEEB;
+  background-color: #d43f3a;
   color: #fff;
 }
 .login form .btn_group button:last-child {
-  border: 1px solid #87CEEB;
+  border: 1px solid #d43f3a;
   background-color: rgba(135, 206, 235, 0.4);
-  color: #87CEEB;
+  color: #d43f3a;
+}
+.courseInfo {
+  padding-bottom: 1.06666667rem;
 }
 .courseInfo .coursehead {
   height: 3.2rem;
-  background: url('../image/course1.png') no-repeat center;
+  background: url('../img/course1.png') no-repeat center;
   background-size: 300px;
   background-color: rgba(0, 0, 0, 0.3);
 }
 .courseInfo .coursehead .back_img {
   top: 0.26666667rem;
   left: 0.26666667rem;
+  color: #fff;
+  font-size: 0.64rem;
 }
 .courseInfo .coursehead .courseName {
   bottom: 0.26666667rem;
@@ -523,7 +534,7 @@
   border-top: 2px solid #808080;
   border-bottom: 2px solid #808080;
 }
-.courseInfo .start {
+.start {
   bottom: 0rem;
   width: 100%;
   height: 1.06666667rem;
@@ -599,7 +610,7 @@
   width: 0.4rem;
   height: 0.4rem;
   border-radius: 15px;
-  background-color: #87CEEB;
+  background-color: #d43f3a;
   z-index: 3;
 }
 .videoPlay .controls .progress .bar .line,
@@ -609,7 +620,7 @@
   height: 0.13333333rem;
   width: 0rem;
   border-radius: 5px;
-  background-color: #87CEEB;
+  background-color: #d43f3a;
   z-index: 2;
 }
 .videoPlay .controls .progress .bar .loaded {
@@ -686,6 +697,12 @@
 }
 .va-b {
   vertical-align: bottom;
+}
+.chat-header {
+  background-color: #d43f3a;
+}
+.chat-header h1 {
+  color: #fff;
 }
 .ng-enter {
   transition: 0.5s linear all;
@@ -835,4 +852,10 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+.view-panel {
+  background-color: #eee;
+}
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+  color: #d43f3a;
 }

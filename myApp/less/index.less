@@ -13,6 +13,7 @@
 @import 'videoPlay.less';
 @import 'property.less';
 @import 'variable.less';
+@import 'chat.less';
 
 .ng-enter{
   transition:0.5s linear all;
@@ -133,4 +134,12 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+// 背景颜色
+.view-panel{
+  background-color:@bodyBgColor;
+}
+// 底部标签颜色
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active{
+  color:@headBgColor;
 }

@@ -1,6 +1,6 @@
 <ion-view view-title="Dashboard">
   <div app-head-search ng-hide='isHidden'></div>
-  <ion-content scroll='true' on-scroll='scroll()' delegate-handle="mainScroll">
+  <ion-content scroll='true' on-scroll='scroll()' delegate-handle="mainScroll" class='view-panel'>
     <ion-refresher pulling-text="下拉刷新..."></ion-refresher>
     <div app-carousel list='imglist'></div>
     <div app-module-list list='modulelist'></div>

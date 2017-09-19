@@ -48,7 +48,31 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
               }
             }
           })
-
+          .state('course',{
+            url:'/course',
+            templateUrl:'templates/course.html',
+            controller:'courseCtrl'
+          })
+          .state('courseInfo',{
+            url:'/courseInfo/:id',
+            templateUrl:'templates/courseInfo.html',
+            controller:'courseInfoCtrl'
+          })
+          .state('video',{
+            url:'/video',
+            templateUrl:'templates/video.html',
+            controller:'videoCtrl'
+          })
+          .state('news',{
+            url:'/news',
+            templateUrl:'templates/news.html',
+            controller:'newsCtrl'
+          })
+          .state('paper',{
+            url:'/paper',
+            templateUrl:'templates/paper.html',
+            controller:'paperCtrl'
+          })
           .state('tab.chats', {
             url: '/chats',
             views: {
