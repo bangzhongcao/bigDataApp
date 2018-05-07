@@ -1,29 +1,66 @@
 <ion-view>
-	<ion-content>
 		<div class="courseInfo">
-			<div class="coursehead p-r">
-				<div class="p-a back_img ta-c" ng-click='back()'>
+			<div class="coursehead p-a o-h">
+				<img class='courseImg' ng-src="{{courseInfo.imgUrl}}" alt="">
+				<div class="p-a back_img ta-c" ng-click='back()' nav-direction="back">
 					<span class='ion-arrow-return-left'></span>
 				</div>
-				<p class='courseName p-a'>spark从零开始</p>
-				<p class="collect_icon p-a ta-c">
-					<img src="img/unlike.png" alt="">
-				</p>
+				<div class='nameBox p-a'>
+					<p class='courseName' ng-bind='courseInfo.name'></p>
+					<p class='courseTeacher'>授课老师：<span ng-bind='courseInfo.teacher'></span></p>
+				</div>
+				<div class="collectBtn p-a ta-c" ng-click='collectCourse()'>
+					<i ng-if='isLike' class="icon ion-ios-heart"></i>	
+					<i ng-if='!isLike' class="icon ion-ios-heart-outline"></i>
+					<!-- <img ng-src="{{isLikeImg}}" alt=""> -->
+				</div>
 			</div>
-			<div class="course_intro">
-				简介：Spark作为新一代大数据计算引擎，因为内存计算的特性，具有比hadoop更快的计算速度。本教程涉及Spark基础概念RDD，KeyValueRDD，RDD的常用Transformation和Action操作等
+			<div class="tabs-top tabs-background-dark tabs-color-light">
+				<div class="tabs" style='top:120px'>
+					<div class="tab-item" ng-class="{'active':active==1,'':'active==2'}" ng-click='active=1'>课程详情</div>
+					<div class="tab-item" ng-class="{'active':active==2,'':'active==1'}" ng-click='active=2'>评论</div>
+				</div>
 			</div>
-			<div class="outline">
-				<p class='outline_title'>课程提纲</p>
-				<div class='outline_content' ng-repeat='item in outlinelist'>
-					<p class='chapter' ng-bind='item.title'></p>
-					<div class="content_video" ng-repeat='obj in item.content'>
-						<p class="video_title" ng-bind='obj.name' ng-click='selfName?learn():login()'></p>
+			<div ng-show='active==1' class='infoPanel o-a'>
+				<div class="courseIntro">
+					<span style='color:#000'>简介：</span>
+					<span class='intro' ng-bind='courseInfo.intro'></span>
+				</div>
+				<div class='chapterPanel'>
+					<div class="courseChapter" ng-repeat='item in courseInfo.outline'>
+						<p class='chapterTitle' ng-bind='item.title'></p>
+						<div class='eachChapter' ng-repeat='obj in item.chapter' ng-click='goPlay(obj.url)'>
+							<i class='icon ion-ios-play-outline palyIcon'></i>
+							<span ng-bind='obj.name'></span>
+						</div>
 					</div>
 				</div>
 			</div>
+			<div ng-show='active==2' class='infoPanel'>
+				<div class='courseRemark' ng-repeat="item in remark">
+					<p class='userName'>{{item.name}}</p>
+					<p class='commentTime' ng-bind='item.time'></p>
+					<p class='commentContent' ng-bind="item.content"></p>
+				</div>
+			</div>
+			<div ng-show="active==2&&isComment==1" class="commented p-f">
+				<div class="commentBtn f-r" ng-click='isComment=2'>
+					<i class="icon ion-chatbox-working" style='margin-right:6px'></i>
+					<span>评论</span>
+				</div>
+			</div>
+			<footer class='footerInput' ng-show="active==2&&isComment==2">
+				<div class="inputComment">
+					<div class="cancelBtn d-ib va-m"  ng-click='isComment=1'>
+						<i class='icon ion-chevron-left'></i>
+					</div>
+					<div class="inputRemark d-ib va-m">
+						<input ng-model='comment' type="text" placeholder='评论'>
+					</div>
+					<div class="submitBtn d-ib ta-c va-m" ng-click='submitComment()'>
+						提交
+					</div>
+				</div>
+			</footer>
 		</div>
-	</ion-content>
-	<div class="start p-f ta-c" ng-bind="selfName?'开始学习':'去登录'" 
-			ng-click='selfName?learn():login()'></div>
 </ion-view>>

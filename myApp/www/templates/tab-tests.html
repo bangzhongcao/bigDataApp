@@ -1,0 +1,30 @@
+<ion-view view-title="Tests" class='testPanel'>
+  <ion-header-bar align-title="center" class='chat-header'>
+    <h1 class="title">测试列表</h1>
+  </ion-header-bar>
+  <ion-content>
+    <ion-refresher pulling-text="下拉刷新..."></ion-refresher>
+    <ion-list class='testsList'>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in tests" ng-click='goTest(item)' type="item-text-wrap">
+          <div class="test-left f-l">
+            <p class='test-title'><strong ng-bind='item.name'></strong></p>
+            <p class='test-intro'><span ng-bind="item.intro"></span></p>
+          </div>
+          <div class="test-right f-r">
+              <span class='f-r status' ng-bind='item.status' ng-class="{'assertive':item.status==='未完成','balanced':item.status==='已完成'}">
+              </span>
+          </div>
+        <!-- </div> -->
+        <!-- <img ng-src="{{chat.face}}"> -->
+        <!-- <h2>{{item.name}}</h2>
+        <p>{{item.intro}}</p>
+        <i>{{item.status}}</i> -->
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <!-- <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button> -->
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

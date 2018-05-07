@@ -1,0 +1,61 @@
+[
+	{
+		"id":1,
+		"intro":"从农耕时代到工业时代到信息时代，技术力量不断推动人类创造新的世界。互联网，正以改变一切的力量，在全球范围掀起一场影响人类所有层面的深刻变革，人类正站在一个新的时代到来的前沿。",
+		"name":"互联网时代",
+		"time":"2014年",
+		"imgUrl":"img/video1.png",
+		"episodes":[
+			{
+				"id":1,
+				"name":"第一集 《时代》",
+				"url":"resource/video/杨强.mp4"
+			},
+			{
+				"id":2,
+				"name":"第二集 《浪潮》",
+				"url":"resource/video/杨强.mp4"
+			},
+			{
+				"id":3,
+				"name":"第三集 《能量》",
+				"url":"resource/video/杨强.mp4"
+			},
+			{
+				"id":4,
+				"name":"第四集 《再构》",
+				"url":"resource/video/杨强.mp4"
+			},
+			{
+				"id":5,
+				"name":"第五集 《崛起》",
+				"url":"resource/video/杨强.mp4"
+			},
+			{
+				"id":6,
+				"name":"第六集 《迁徙》",
+				"url":"resource/video/杨强.mp4"
+			},
+			{
+				"id":7,
+				"name":"第七集 《控制》",
+				"url":"resource/video/杨强.mp4"
+			},
+			{
+				"id":8,
+				"name":"第八集 《忧虑》",
+				"url":"resource/video/杨强.mp4"
+			},
+			{
+				"id":9,
+				"name":"第九集 《世界》",
+				"url":"resource/video/杨强.mp4"
+			},
+			{
+				"id":10,
+				"name":"第十集 《眺望》",
+				"url":"resource/video/杨强.mp4"
+			}
+		]
+	}
+]

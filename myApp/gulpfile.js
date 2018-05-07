@@ -1,8 +1,5 @@
 var gulp = require('gulp');
-// var sass = require('gulp-sass');
 var less = require('gulp-less');
-var cleanCss = require('gulp-clean-css');
-var rename = require('gulp-rename');
 var server = require('./server');
 
 var paths = {

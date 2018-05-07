@@ -1,0 +1,12 @@
+<div class='myCollect' nav-direction="back">
+	<ion-header-bar align-title="left" class='chat-header'>
+		<h1 class="backBtn ion-ios-undo p-a ta-c" ng-click='back()'></h1>
+		<p class='collectTitle ta-c'>我的收藏</p>
+	</ion-header-bar>
+	<div class='collectPanel o-a p-r'>
+		<div ng-show='listCourse.length' app-course-list title-name='课程' list='listCourse'></div>
+	    <div ng-show='listNews.length' app-news-list title-name='新闻' list='listNews'></div>
+	    <div ng-show='listVideo.length' app-video-list title-name='纪录片' list='listVideo'></div>
+	    <div ng-show='listPaper.length' app-paper-list title-name='论文' list='listPaper'></div>
+	</div>
+</div>

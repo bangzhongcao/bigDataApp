@@ -1,0 +1,20 @@
+[
+	{
+	    "id":1,
+	    "img":"img/video1.png",
+	    "name":"互联网时代",
+	    "episodes":"12集"
+	},
+	{
+	    "id":2,
+	    "img":"img/video2.png",
+	    "name":"现代生活的秘密规则：算法",
+	    "episodes":"1集"
+    },
+    {
+	    "id":3,
+	    "img":"img/video3.png",
+	    "name":"谷歌与世界头脑",
+	    "episodes":"1集"
+    }
+]

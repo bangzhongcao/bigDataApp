@@ -1,0 +1,137 @@
+.newsRead{
+	.backBtn{
+		.w(30);
+		.h(30);
+		.lh(30);
+		.fs(24);
+	}
+	.newsPanel{
+	    min-height: 100%;
+	    height: 100%;
+	    box-sizing: border-box;
+		padding:100px 10px 0 10px;
+		.pt(55);
+		.pb(45);
+		.mb(-45);
+		overflow:auto;
+		.newsTitle{
+			.fs(24);
+			.mt(10);
+			.mb(15);
+			color:#808080;
+			.lh(36);
+		}
+		.articleInfo{
+			.fs(12);
+			.lh(36);
+			.newsOri{
+				.mr(5);
+			}
+			.newsTime{
+				color:#a0a0a0;
+			}
+			.collectBtn{
+				.w(40);
+				.h(40);
+				.r(10);
+				.b(0);
+				.fs(24);
+				.lh(40);
+				border-radius: 30px;
+				background-color: @defaultColor;
+				color:#ca0c16;
+			}
+		}
+		.newsContent{
+			text-indent:2em;
+			.lh(24);
+			.fs(15);
+			img{
+				width:100%;
+			}
+		}
+		.commentTitle{
+			.mt(15);
+			.mb(10);
+			.fs(16);
+			font-weight:700;
+			.lh(30);
+		}
+		.newsRemark{
+			.pb(6);
+			.mb(10);
+			.userName{
+				.fs(16);
+				.lh(26);
+				font-weight:bold;
+				color:#2d64b3;
+			}
+			.commentTime{
+				.fs(14);
+				.lh(18);
+				color:#c0c0c0;
+			}
+			.commentContent{
+				.mt(8);
+				.fs(14);
+				.lh(22);
+			}
+			border-bottom: 1px solid #efefef;
+		}
+	}
+	.commented{
+		background-color:#fff;
+		width:100%;
+		.b(-1);
+		.l(0);
+		.h(45);
+		border-top:1px solid #ccc;
+		.commentBtn{
+			.h(45);
+			.lh(45);
+			.w(70);
+			.fs(16);
+			color:#888;
+		}
+	}
+	.footerInput{
+		background-color:#fff;
+		.inputComment{
+			border-top:1px solid #ccc;
+			.h(45);
+			.fs(0);
+			.cancelBtn{
+				width:8%;
+				.ml(8);
+				.h(45);
+				.lh(45);
+				.fs(24);
+				color:#666;
+			}
+			.inputRemark{
+				width:66%;
+				.h(45);
+				.pt(5);
+				.pb(5);
+				input{
+					width:100%;
+					.pl(5);
+					.pr(5);
+					.h(33);
+					.lh(33);
+					border:1px solid #a0a0a0;
+				}
+			}
+			.submitBtn{
+				width:17%;
+				.h(30);
+				.ml(8);
+				border-radius:3px;
+				background-color:#387ef5;
+				color:#fff;
+				.lh(30);
+				.fs(15);
+			}
+		}
+	}
+}

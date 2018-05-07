@@ -35,11 +35,15 @@ angular.module('starter.directive', [])
 		templateUrl:'templates/view/listHead.html',
 		scope:{
 			backstyle:'=',
-			stitle:'='
+			stitle:'=',
+			search:'&',
+			key:'@'
 		},
-		link:function($scope){
+		controller:function($scope,$state,$ionicViewSwitcher,$rootScope){
 			$scope.back = function(){
-				window.history.back();
+				$state.go('tab.dash');
+				$ionicViewSwitcher.nextDirection("back");
+				$rootScope.hasSearch = false;
 			}
 		}
 	}
@@ -66,6 +70,12 @@ angular.module('starter.directive', [])
 			list:'=',
 			more:'@'
 		}
+		// controller:function($scope,$state,$http){
+		// 	// 跳转到课程详情页
+		// 	$scope.goCourseInfo = function(obj){
+		// 		$state.go('courseInfo',{name:obj.courseName,teachName:obj.teacherName,id:obj.courseId});		
+		// 	}
+		// }
 	}
 }])
 

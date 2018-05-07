@@ -1,0 +1,58 @@
+<div class='videoInfo' nav-direction="back">
+	<ion-header-bar align-title="left" class='chat-header'>
+		<h1 class="backBtn ion-ios-undo f-l ta-c" ng-click='back()'></h1>
+	</ion-header-bar>
+	<div class="tabs-top tabs-background-dark tabs-color-light">
+		<div class="tabs">
+			<div class="tab-item" ng-class="{'active':active==1,'':'active==2'}" ng-click='active=1'>纪录片详情</div>
+			<div class="tab-item" ng-class="{'active':active==2,'':'active==1'}" ng-click='active=2'>评论</div>
+		</div>
+	</div>
+	<div ng-show='active==1' class='videoPanel p-r'>
+		<div class="InfoPanel o-h">
+			<div class="videoImg f-l o-h">
+				<img ng-src="{{videoInfo.imgUrl}}" alt="">
+			</div>
+			<div class="collectBtn ta-c f-r" ng-click='collectVideo()'>
+				<i ng-if='isLike' class="icon ion-ios-heart"></i>	
+				<i ng-if='!isLike' class="icon ion-ios-heart-outline"></i>
+			</div>
+			<div class="videoIntro">
+				<p class='name' ng-bind='videoInfo.name'></p>
+				<p class='time'>时间：{{videoInfo.time}}</p>
+				<p class='intro o-h p-r'>简介：{{videoInfo.intro}}</p>
+			</div>
+		</div>
+		<div class="videoEpisode">
+			<p class='episode d-ib va-m ta-c' ng-repeat='item in videoInfo.episodes' ng-click='goPlay(item.url,item.name)'>
+				<span ng-bind='item.id'></span>
+			</p>
+		</div>
+	</div>
+	<div ng-show='active==2' class='videoPanel'>
+		<div class='videoRemark' ng-repeat="item in remark">
+			<p class='userName'>{{item.name}}</p>
+			<p class='commentTime' ng-bind='item.time'></p>
+			<p class='commentContent' ng-bind="item.content"></p>
+		</div>
+	</div>
+	<div ng-show="active==2&&isComment==1" class="commented p-f">
+		<div class="commentBtn f-r" ng-click='isComment=2'>
+			<i class="icon ion-chatbox-working" style='margin-right:6px'></i>
+			<span>评论</span>
+		</div>
+	</div>
+	<footer class='footerInput' ng-show="active==2&&isComment==2">
+		<div class="inputComment">
+			<div class="cancelBtn d-ib va-m"  ng-click='isComment=1'>
+				<i class='icon ion-chevron-left'></i>
+			</div>
+			<div class="inputRemark d-ib va-m">
+				<input ng-model='comment' type="text" placeholder='评论'>
+			</div>
+			<div class="submitBtn d-ib ta-c va-m" ng-click='submitComment()'>
+				提交
+			</div>
+		</div>
+	</footer>
+</div>

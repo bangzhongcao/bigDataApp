@@ -1,42 +1,119 @@
 .courseInfo{
-	.pb(40);
+	.pt(170);
+	height: 100%;
+	box-sizing: border-box;
+	// .pb(40);
 	.coursehead{
 		.h(120);
-		background: url('../img/course1.png') no-repeat center;
-		background-size: 300px;
-		background-color: rgba(0, 0, 0, 0.3);
+		.t(0);
+		.l(0);
+		background-color: rgba(0, 0, 0, 0.1);
+		.courseImg{
+			width: 100%;
+			.mt(-30);
+		}
 		.back_img{
 			.t(10);
 			.l(10);
-			color:@defaultColor;
+			color:#404040;
 			.fs(24);
 		}
-		.courseName{
+		.nameBox{
 			.b(10);
 			.l(20);
-			color:@defaultColor;
 			.fs(14);
+			.courseName{
+				color:#111;
+				.lh(40);
+				.fs(22);
+				font-weight: bold;
+			}
+			.courseTeacher{
+				color:#222;
+				.lh(20);
+				.fs(14);
+				span{
+					font-weight: bold;
+				}
+			}
 		}
-		.collect_icon{
+		.collectBtn{
 			.w(40);
 			.h(40);
 			.r(30);
+			.t(20);
+			.fs(24);
 			.lh(40);
-			.b(-20);
 			border-radius: 30px;
 			background-color: @defaultColor;
-			img{
-				vertical-align: middle;
-				.w(20);
-				.h(20);
-			}
+			color:#ca0c16;
 		}
 	}
-	.course_intro{
-		padding: 25px 8px;
-		.fs(12);
-		color:@fontColor;
-		border-bottom: 1px solid @lineColor;
+	.infoPanel{
+		min-height: 100%;
+	    height: 100%;
+	    box-sizing: border-box;
+		padding:0 10px;
+		.pb(50);
+		.mb(-50);
+		// overflow:auto;
+		.courseIntro{
+			padding: 15px 8px;
+			.fs(14);
+			.lh(22);
+			border-bottom: 1px solid @lineColor;
+			.intro{
+				color:#888;
+			}
+		}
+		.chapterPanel{
+			.mt(15);
+			background-color: #efefef;
+			.pt(10);
+			.pb(10);
+			.pl(8);
+			.pr(8);
+			.chapterTitle{
+				.fs(15);
+				.lh(34);
+				color:#777;
+			}
+			.eachChapter{
+				.mb(10);
+				.pl(10);
+				background-color: #fff;
+				border-radius: 5%;
+				.h(40);
+				.lh(40);
+				.fs(14);
+				color:#a0a0a0;
+				.palyIcon{
+					.mr(10);
+				}
+			}
+		}
+		.courseRemark{
+			.pb(6);
+			.mt(6);
+			.mb(6);
+			.userName{
+				.fs(16);
+				.lh(26);
+				font-weight:bold;
+				color:#2d64b3;
+			}
+			.commentTime{
+				.fs(14);
+				.lh(18);
+				color:#c0c0c0;
+			}
+			.commentContent{
+				.mt(8);
+				.fs(14);
+				.lh(22);
+			}
+			border-bottom: 1px solid #efefef;
+		}
 	}
 	.outline{
 		.fs(13);
@@ -44,6 +121,34 @@
 		.outline_title{
 			.pl(10);
 			.lh(35);
+		}
+		.course_content{
+			padding:5px 15px;
+			.lh(30);
+			.fs(15);
+			.tests{
+				.fs(12);
+				color:#fff;
+				.pt(5);
+				.pb(6);
+				border-bottom:1px dotted #c0c0c0;
+				.test-title{
+					.fs(15);
+					color:#000;
+				}
+				.test-status-success{
+					.lh(22);
+					.mt(4);
+					padding:0 3px;
+					background-color:#0aa770;
+				}
+				.test-status-error{
+					.lh(22);
+					.mt(4);
+					padding:0 3px;
+					background-color: #f53d3d;
+				}
+			}
 		}
 		.outline_content{
 			padding: 10px 0 8px 60px;
@@ -58,13 +163,59 @@
 			}
 		}
 	}
-}
-.start{
-	.b(0);
-	width: 100%;
-	.h(40);
-	.lh(40);
-	background-color: @logOffColor;
-	.fs(16);
-	color: @defaultColor;
+	.commented{
+		background-color:#fff;
+		width:100%;
+		.b(-1);
+		.l(0);
+		.h(45);
+		border-top:1px solid #ccc;
+		.commentBtn{
+			.h(45);
+			.lh(45);
+			.w(70);
+			.fs(16);
+			color:#888;
+		}
+	}
+	.footerInput{
+		background-color:#fff;
+		.inputComment{
+			border-top:1px solid #ccc;
+			.h(45);
+			.fs(0);
+			.cancelBtn{
+				width:8%;
+				.ml(8);
+				.h(45);
+				.lh(45);
+				.fs(24);
+				color:#666;
+			}
+			.inputRemark{
+				width:66%;
+				.h(45);
+				.pt(5);
+				.pb(5);
+				input{
+					width:100%;
+					.pl(5);
+					.pr(5);
+					.h(33);
+					.lh(33);
+					border:1px solid #a0a0a0;
+				}
+			}
+			.submitBtn{
+				width:17%;
+				.h(30);
+				.ml(8);
+				border-radius:3px;
+				background-color:#387ef5;
+				color:#fff;
+				.lh(30);
+				.fs(15);
+			}
+		}
+	}
 }

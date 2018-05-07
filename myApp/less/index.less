@@ -10,10 +10,20 @@
 @import 'self.less';
 @import 'login.less';
 @import 'courseInfo.less';
-@import 'videoPlay.less';
+@import 'player.less';
 @import 'property.less';
 @import 'variable.less';
-@import 'chat.less';
+@import 'tests.less';
+@import 'forget-pass.less';
+@import 'alterPass.less';
+@import 'exercise.less';
+@import 'paperInfo.less';
+@import 'paperRead.less';
+@import 'newsRead.less';
+@import 'search.less';
+@import 'videoInfo.less';
+@import 'myCollect.less';
+@import 'bindEmail.less';
 
 .ng-enter{
   transition:0.5s linear all;
@@ -35,7 +45,9 @@
 .h(@px) {
 	height: unit(@px / 37.5, rem);
 }
-
+.mh(@px) {
+  max-height: unit(@px / 37.5, rem);
+}
 .lh(@px) {
 	line-height: unit(@px / 37.5, rem);
 }
@@ -75,10 +87,13 @@
 .r(@px) {
   	right: unit(@px / 37.5, rem);
 }
-*{
-  padding: 0;
-  margin: 0;
+.br(@px){
+  border-radius: unit(@px / 37.5, rem);
 }
+// *{
+//   padding: 0;
+//   margin: 0;
+// }
 html,body{
 	height:100%;
 	width:100%;
@@ -142,4 +157,11 @@ table {
 // 底部标签颜色
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active{
   color:@headBgColor;
+}
+// 头部颜色
+.chat-header{
+  background-color: @headBgColor;
+  h1{
+    color:@defaultColor;
+  }
 }

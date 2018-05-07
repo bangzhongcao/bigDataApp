@@ -1,0 +1,23 @@
+[
+	{
+        "id":1,
+        "img":"img/course1.png",
+        "name":"Spark从零开始",
+        "teachName":"Terby",
+        "intro":"本课程旨在让同学们了解Spark基础知识，掌握Spark基础开发。"
+    },
+    {
+        "id":2,
+        "img":"img/course2.png",
+        "name":"Python数据分析-基础技术篇",
+        "teachName":"途索",
+        "intro":"使用Python进行数据分析的基础模块简介。"
+    },
+    {
+        "id":3,
+        "img":"img/course3.png",
+        "name":"R语言入门与进阶",
+        "teachName":" 扬帆远航_",
+        "intro":"这门课将会带领您领略R语言的精髓,打开R语言的大门。"
+    }
+]

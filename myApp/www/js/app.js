@@ -29,7 +29,30 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
       // Set up the various states which the app can be in.
       // Each state's controller can be found in controllers.js
       $stateProvider
-
+          .state('login',{
+            cache:false,
+            url:'/login',
+            templateUrl:'templates/login.html',
+            controller:'loginCtrl'
+          })
+          .state('forget',{
+            cache:false,
+            url:'/forget',
+            templateUrl:'templates/forget-pass.html',
+            controller:'forgetCtrl'
+          })
+          .state('alterPass',{
+            cache:false,
+            url:'/alterPass',
+            templateUrl:'templates/alterPass.html',
+            controller:'alterPassCtrl'
+          })
+          .state('bindEmail',{
+            cache:false,
+            url:'/bindEmail',
+            templateUrl:'templates/bindEmail.html',
+            controller:'bindEmailCtrl'
+          })
         // setup an abstract state for the tabs directive
           .state('tab', {
             url: "/tab",
@@ -38,7 +61,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
           })
 
         // Each tab has its own nav history stack:
-
           .state('tab.dash', {
             url: '/dash',
             views: {
@@ -48,7 +70,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
               }
             }
           })
+          .state('search',{
+            // cache: false,
+            url:'/search/:key',
+            templateUrl:'templates/search.html',
+            controller:'searchCtrl'
+          })
           .state('course',{
+            cache: false,
             url:'/course',
             templateUrl:'templates/course.html',
             controller:'courseCtrl'
@@ -59,41 +88,71 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
             controller:'courseInfoCtrl'
           })
           .state('video',{
+            cache: false,
             url:'/video',
             templateUrl:'templates/video.html',
             controller:'videoCtrl'
           })
+          .state('videoInfo',{
+            url:'/videoInfo/:id',
+            templateUrl:'templates/videoInfo.html',
+            controller:'videoInfoCtrl'
+          })
+          .state('player',{
+            url:'/player',
+            templateUrl:'templates/player.html',
+            controller:'playerCtrl'
+          })
           .state('news',{
+            cache: false,
             url:'/news',
             templateUrl:'templates/news.html',
             controller:'newsCtrl'
           })
+          .state('newsRead',{
+            url:'/newsRead/:id',
+            templateUrl:'templates/newsRead.html',
+            controller:'newsReadCtrl'
+          })
           .state('paper',{
+            cache: false,
             url:'/paper',
             templateUrl:'templates/paper.html',
             controller:'paperCtrl'
           })
-          .state('tab.chats', {
-            url: '/chats',
+          .state('paperInfo',{
+            url:'/paperInfo/:id',
+            templateUrl:'templates/paperInfo.html',
+            controller:'paperInfoCtrl'
+          })
+          .state('paperRead',{
+            url:'/paperRead',
+            templateUrl:'templates/paperRead.html',
+            controller:'paperReadCtrl'
+          })
+          .state('myCollect',{
+            url:'/myCollect/:id',
+            templateUrl:'templates/myCollect.html',
+            controller:'myCollectCtrl'
+          })
+          .state('tab.tests', {
+            url: '/tests',
+            cache:'false', 
             views: {
-              'tab-chats': {
-                templateUrl: 'templates/tab-chats.html',
-                controller: 'ChatsCtrl'
+              'tab-tests': {
+                templateUrl: 'templates/tab-tests.html',
+                controller: 'TestsCtrl'
               }
             }
           })
-          .state('tab.chat-detail', {
-            url: '/chats/:chatId',
-            views: {
-              'tab-chats': {
-                templateUrl: 'templates/chat-detail.html',
-                controller: 'ChatDetailCtrl'
-              }
-            }
+          .state('exercise',{
+            url:'/exercise/:exerName/:exerStatus/:exerId',
+            templateUrl:'templates/exercise.html',
+            controller:'exerciseCtrl'
           })
-
           .state('tab.account', {
             url: '/account',
+            cache:'false', 
             views: {
               'tab-account': {
                 templateUrl: 'templates/tab-account.html',
@@ -103,6 +162,71 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
           });
 
       // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/tab/dash');
+      // $urlRouterProvider.otherwise('/login');
+    })
 
-    });
+    //ionic点击系统返回键退出APP  
+    //  $cordovaKeyboard,
+    .run(function ($rootScope, $ionicPlatform, $state, $ionicHistory, $ionicPopup, $timeout) {
+      if(sessionStorage.getItem('userId')){
+        window.location.href= "/#/tab/dash";//登录
+      }else{
+        window.location.href= "/#/login";//未登录
+      }
+      
+      window.addEventListener('native.keyboardhide', function (e) {  
+        cordova.plugins.Keyboard.isVisible = true;  
+        $timeout(function () {  
+          cordova.plugins.Keyboard.isVisible = false;  
+        }, 100);  
+      
+      });  
+      $ionicPlatform.registerBackButtonAction(function (e) {  
+        //阻止默认的行为  
+        e.preventDefault();  
+        // 退出提示框  
+        function showConfirm() {  
+          var servicePopup = $ionicPopup.show({  
+            title: '提示',  
+            subTitle: '你确定要退出应用吗？',  
+            scope: $rootScope,  
+            buttons: [  
+              {  
+                text: '取消',  
+                type: 'button-clear button-calm',  
+                onTap: function () {  
+                  return 'cancel';  
+                }  
+              },  
+              {  
+                text: '确认',  
+                type: 'button-clear button-calm border-left',  
+                onTap: function (e) {  
+                  return 'active';  
+                }  
+              }  
+            ]  
+          });  
+          servicePopup.then(function (res) {  
+            if (res == 'active') {  
+              // 退出app  
+              ionic.Platform.exitApp();  
+            }  
+          });  
+        }  
+        // 判断当前路由是否为各个导航栏的首页，是的话则显示提示框  
+        var current_state_name = $state.current.name; 
+        debugger 
+        // if ($cordovaKeyboard.isVisible()) {  
+        //   $cordovaKeyboard.close();  
+        // } else {  
+          if (current_state_name == 'login' || current_state_name == 'tab.dash' || current_state_name == 'tab.chats' || current_state_name == 'tab.account') {  
+            showConfirm();  
+          } else if ($ionicHistory.backView()) {  
+            $ionicHistory.goBack();  
+          } else {  
+            showConfirm();  
+          }  
+        // }  
+      }, 402); //101优先级常用于覆盖‘返回上一个页面’的默认行为  
+    })  

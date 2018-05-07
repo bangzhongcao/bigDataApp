@@ -1,0 +1,20 @@
+<div class='o-h'>
+	<div class='Search o-a' nav-direction="back">
+		<div class="searchHead p-f" ng-style="background_color">
+			<i class="icon ion-chevron-left back f-l ta-c" ng-click='cancelSearch()'></i>
+			<span class="label f-r ta-c" ng-click='search()'>搜索</span>
+			<div class="inputBox p-r">
+			<!-- ng-keydown='search($event)' -->
+				<span class='tips p-a ta-c' ng-bind='labels' ></span>
+				<input type="search" ng-model='keyWord' placeholder='请输入关键字'>
+			</div>
+			
+		</div>
+		<div ng-if="model==='global'" class="searchContent">
+			<div ng-show='isCourse' app-course-list title-name='课程' list='_GlobalList.courselist'></div>
+		    <div ng-show='isNews' app-news-list title-name='新闻' list='_GlobalList.newslist'></div>
+		    <div ng-show='isVideo' app-video-list title-name='纪录片' list='_GlobalList.videolist'></div>
+		    <div ng-show='isPaper' app-paper-list title-name='论文' list='_GlobalList.paperlist'></div>
+		</div>
+	</div>	
+</div>

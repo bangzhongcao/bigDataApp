@@ -1,0 +1,33 @@
+<div class='pane'>
+	<div class="videoPlay f-l p-r">
+		<video id='Video' class='player' webkit-playsinline style='object-fit:fill' x5-video-orientation="landscape" preload='meta'>
+			<source ng-src="{{videoUrl}}" type='video/mp4'></source>
+		</video>
+		<div ng-show='isPause' class='vplay p-a ta-c' ng-click='Play()'>
+			<i  class="icon ion-play playBtn"></i>
+		</div>
+		<div ng-show='isPlay&&showCtrl' class='vplay p-a ta-c' ng-click='Pause()'>
+			<i  class="icon ion-pause"></i>
+		</div>
+		<div ng-show='showCtrl' class="videoHeader p-a">
+			<span ng-bind="videoName"></span>
+			<i class="icon ion-chevron-left p-a backBtn ta-c" ng-click='back()'></i>
+		</div>
+		<div ng-show='showCtrl' class="controls p-a">
+	        <div class='progressPanel f-l'>
+	            <div id='Progress' class="progressBar p-r" ng-click='changeVideoTime($event)'>
+	                <div id='TimeBar' class="timeBar bar p-a"></div>
+	                <div id="LoadBar" class="loadBar bar p-a"></div>
+	            </div>
+	        </div>
+	        <div class='ta-c timePanel f-l'>
+	        	<span class="current" ng-bind="currentTime?currentTime:'00:00:00'"></span>/
+	        	<span class="duration" ng-bind="totalTime?totalTime:'00:00:00'"></span>
+	        </div>
+	        <div class='ta-c volumePanel f-l' style='flex:1'>
+	        	<i class="icon ion-volume-medium volumeIcon va-m"></i>
+	        	<span class='volumeNum va-m' ng-bind='volume'></span>
+	        </div>
+	    </div>
+	</div>
+</div>

@@ -1,10 +1,11 @@
 <ion-view>
-	<div app-list-head backstyle='back_course_style' stitle='course_title'></div>
+	<div app-list-head backstyle='back_course_style' stitle='course_title' key='course' search="Search(str)"></div>
 	<ion-content>
 		<div class="panel"></div>
-		<!-- <ion-refresher pulling-text="下拉刷新..." style='position:static'></ion-refresher> -->
-		<div app-course-list title-name='课程列表' list='courselist'></div>
-		<!-- <div app-foot></div> -->
+		<ion-scroll class='p-r'>
+			<ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
+			<div app-course-list title-name='课程列表' list='courselist'></div>
+		</ion-scroll>
 	</ion-content>	
 </ion-view>
 
